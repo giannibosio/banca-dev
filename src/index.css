@@ -1,0 +1,123 @@
+@font-face {
+  font-family: 'ScienceGothic';
+  src: url('/fonts/ScienceGothic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  /*background-color: #2a7aad;*/
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+.card {
+  padding: 1vw 5vw;
+  background-color: #cbe6f7;
+  border-radius: 0;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center; /* opzionale se vuoi allinearlo orizzontalmente */
+  min-height: 100vh; /* se vuoi che il contenitore occupi tutta la finestra */
+  margin: 0;
+
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+
+  justify-content: flex-start;
+}
+
+h1 {
+  font-family: 'ScienceGothic', sans-serif;
+  font-size: 3.3em;
+  line-height: 1;
+  color: #476872;
+  font-stretch: condensed;
+}
+
+h2 {
+  margin: 1em;
+  font-weight: 800;
+  color: #2c7cad;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    /*background-color: #ffffff;*/
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #6bc06d;
+    margin: 0.5em;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@media (min-width: 1200px) {
+  .h2,
+  h2 {
+    font-size: larger;
+  }
+}
+
+.btn {
+  width: 90%;
+  font-size: 1.2rem;
+  text-align: center;
+  height: 4em;
+  border-radius: 0.2em;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background-color: #2b7bad;
+}
+
+.container {
+  margin-top: 3em;
+}
+
+.logo-bancadev {
+  margin: 1em;
+  width: 20em;
+}
+
+body {
+  background-color: #2a7aad;
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1001,
+    "pin": "123456",
+    "nome": "Mario",
+    "cognome": "Rossi",
+    "numeroConto": "4589321",
+    "saldoContabile": 3240.1,
+    "saldoDisponibile": 3100.1
+  },
+  {
+    "id": 1002,
+    "pin": "000000",
+    "nome": "Giorgio",
+    "cognome": "Lavazza",
+    "numeroConto": "8945221",
+    "saldoContabile": 1245.67,
+    "saldoDisponibile": 1100.0
+  }
+]

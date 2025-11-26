@@ -1,14 +1,11 @@
 import { useNavigate } from 'react-router-dom';
-import type User from '../types/Users';
+import { useUser } from '../context/UserContext';
 
 import './MenuPage.css';
 
-interface MenuPageProps {
-  currentUser: User | null;
-}
-
-const MenuPage = ({ currentUser }: MenuPageProps) => {
+const MenuPage = () => {
   const navigate = useNavigate();
+  const { currentUser } = useUser();
 
   return (
     <>

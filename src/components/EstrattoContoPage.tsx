@@ -1,9 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import type User from '../types/Users';
-
-interface EstrattoContoPageProps {
-  currentUser: User | null;
-}
+import { useUser } from '../context/UserContext';
 
 const formatCurrency = (value: number) =>
   new Intl.NumberFormat('it-IT', {
@@ -12,8 +8,9 @@ const formatCurrency = (value: number) =>
     maximumFractionDigits: 2,
   }).format(value);
 
-const EstrattoContoPage = ({ currentUser }: EstrattoContoPageProps) => {
+const EstrattoContoPage = () => {
   const navigate = useNavigate();
+  const { currentUser } = useUser();
   const saldoContabile = currentUser?.saldoContabile ?? 0;
   const saldoDisponibile = currentUser?.saldoDisponibile ?? 0;
   const numeroConto = currentUser?.numeroConto ?? '';

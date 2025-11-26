@@ -1,13 +1,9 @@
 import { useNavigate } from 'react-router-dom';
-import type { Dispatch, SetStateAction } from 'react';
-import type User from '../types/Users';
+import { useUser } from '../context/UserContext';
 
-interface EsciPageProps {
-  setCurrentUser: Dispatch<SetStateAction<User | null>>;
-}
-
-const EsciPage = ({ setCurrentUser }: EsciPageProps) => {
+const EsciPage = () => {
   const navigate = useNavigate();
+  const { setCurrentUser } = useUser();
 
   const handleEsci = () => {
     setCurrentUser(null);

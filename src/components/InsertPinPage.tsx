@@ -1,19 +1,17 @@
 import { useState } from 'react';
-import type { Dispatch, SetStateAction, FormEvent } from 'react';
+import type { FormEvent } from 'react';
 import { useNavigate } from 'react-router';
 import usersData from '../data/users.json';
 import type User from '../types/Users';
 import Button from './Button';
+import { useUser } from '../context/UserContext';
 import './InsertPinPage.css';
 
-interface InsertPinPageProps {
-  setCurrentUser: Dispatch<SetStateAction<User | null>>;
-}
-
-const InsertPinPage = ({ setCurrentUser }: InsertPinPageProps) => {
+const InsertPinPage = () => {
   const [pin, setPin] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const { setCurrentUser } = useUser();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();

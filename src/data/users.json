@@ -1,20 +1,50 @@
-[
-  {
-    "id": 1001,
-    "pin": "123456",
-    "nome": "Mario",
-    "cognome": "Rossi",
-    "numeroConto": "4589321",
-    "saldoContabile": 3240.1,
-    "saldoDisponibile": 3100.1
-  },
-  {
-    "id": 1002,
-    "pin": "000000",
-    "nome": "Giorgio",
-    "cognome": "Lavazza",
-    "numeroConto": "8945221",
-    "saldoContabile": 1245.67,
-    "saldoDisponibile": 1100.0
-  }
-]
+{
+  "utenti": [
+    {
+      "id": 1001,
+      "pin": "123456",
+      "nome": "Mario",
+      "cognome": "Rossi",
+      "numeroConto": "4589321",
+      "saldoContabile": 3240.1,
+      "saldoDisponibile": 3100.1,
+      "movimentiRecenti": [
+        {
+          "data": "2025-11-22",
+          "descrizione": "Prelievo ATM",
+          "importo": -50.0,
+          "categoria": "Prelievo"
+        },
+        {
+          "data": "2025-11-20",
+          "descrizione": "Pagamento POS - Supermercato",
+          "importo": -37.25,
+          "categoria": "Spesa"
+        }
+      ]
+    },
+    {
+      "id": 1002,
+      "pin": "000000",
+      "nome": "Giorgio",
+      "cognome": "Lavazza",
+      "numeroConto": "8945221",
+      "saldoContabile": 1245.67,
+      "saldoDisponibile": 1100.0,
+      "movimentiRecenti": [
+        {
+          "data": "2025-11-15",
+          "descrizione": "Stipendio ABC Srl",
+          "importo": 2100.0,
+          "categoria": "Entrata"
+        },
+        {
+          "data": "2025-11-10",
+          "descrizione": "Acquisto Amazon",
+          "importo": -79.9,
+          "categoria": "Shopping"
+        }
+      ]
+    }
+  ]
+}

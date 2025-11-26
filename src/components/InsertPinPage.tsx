@@ -18,7 +18,8 @@ const InsertPinPage = () => {
     setError('');
 
     // Effettua una conversione sicura del tipo usando 'unknown' come suggerito
-    const users = usersData as unknown as User[];
+    const data = usersData as unknown as { utenti: User[] };
+    const users = data.utenti;
     //pulizia pin
     const cleanedPin = pin.trim();
     const user = users.find((u) => u.pin === cleanedPin);

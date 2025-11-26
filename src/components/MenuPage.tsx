@@ -10,9 +10,7 @@ const MenuPage = () => {
   return (
     <>
       <h2>
-        {currentUser
-          ? `Ciao ${currentUser.nome}, cosa vuoi fare oggi?`
-          : 'Cosa vuoi fare oggi?'}
+        {currentUser ? `Ciao ${currentUser.nome}, cosa vuoi fare oggi?` : '-'}
       </h2>
       <div className="menu-buttons d-flex gap-0 flex-column">
         <button

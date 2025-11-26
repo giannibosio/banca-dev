@@ -72,6 +72,7 @@ function App() {
             />
           </Routes>
         </div>
+        .
         <img src={reactLogo} className="react-logo" alt="React" />
       </div>
     </>

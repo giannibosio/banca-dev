@@ -7,7 +7,7 @@ import EstrattoContoPage from './components/EstrattoContoPage';
 import EsciPage from './components/EsciPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import type User from './types/Users';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router'; //aggiunto location per non mostrare nav in home (menù)
 
 import reactLogo from './assets/react.svg';
 import logoBancaDev from './assets/logo-bancadev.svg';
@@ -18,10 +18,13 @@ import { Navbar } from './components/Navbar';
 function App() {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
 
+  const location = useLocation();
+  const showNavbar = currentUser !== null && location.pathname !== '/home'; // showNavbar=true se User e se location!==/home
+
   return (
     <>
       <div className="container">
-        <Navbar isLoggedIn={Boolean(currentUser)} />
+        {showNavbar && <Navbar isLoggedIn={Boolean(currentUser)} />}
         <div className="card">
           <img src={logoBancaDev} className="logo-bancadev" alt="React" />
 
@@ -31,7 +34,7 @@ function App() {
               element={<InsertPinPage setCurrentUser={setCurrentUser} />}
             />
             <Route
-              path="menu"
+              path="home"
               element={
                 <ProtectedRoute currentUser={currentUser}>
                   <MenuPage currentUser={currentUser} />
@@ -72,7 +75,7 @@ function App() {
             />
           </Routes>
         </div>
-        .
+
         <img src={reactLogo} className="react-logo" alt="React" />
       </div>
     </>

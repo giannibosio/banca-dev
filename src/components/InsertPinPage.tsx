@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { Dispatch, SetStateAction, FormEvent } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import usersData from '../data/users.json';
 import type User from '../types/Users';
 import Button from './Button';
@@ -19,14 +19,15 @@ const InsertPinPage = ({ setCurrentUser }: InsertPinPageProps) => {
     e.preventDefault();
     setError('');
 
-    const users = usersData as User[];
+    // Effettua una conversione sicura del tipo usando 'unknown' come suggerito
+    const users = usersData as unknown as User[];
     //pulizia pin
     const cleanedPin = pin.trim();
     const user = users.find((u) => u.pin === cleanedPin);
 
     if (user && pin) {
       setCurrentUser(user);
-      navigate('/menu');
+      navigate('/home');
     } else {
       setPin('');
       setError('PIN non riconosciuto');

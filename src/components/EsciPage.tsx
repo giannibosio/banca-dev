@@ -24,7 +24,7 @@ const EsciPage = ({ setCurrentUser }: EsciPageProps) => {
         </button>
         <button
           className="btn btn-secondary flex-fill"
-          onClick={() => navigate('/menu')}
+          onClick={() => navigate('/home')}
         >
           NO
         </button>

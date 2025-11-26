@@ -22,8 +22,8 @@ export function Navbar({ isLoggedIn }: NavbarProps) {
           {isLoggedIn && (
             <ul className="navbar-nav me-auto">
               <li className="nav-item">
-                <NavLink to="/menu" end className="nav-link">
-                  MENU
+                <NavLink to="/home" end className="nav-link">
+                  HOME
                 </NavLink>
               </li>
 

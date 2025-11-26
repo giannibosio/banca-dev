@@ -9,7 +9,7 @@ const MovimentiPage = () => {
       <div className="logout d-flex flex-row gap-0">
         <button
           className="btn btn-success flex-fill"
-          onClick={() => navigate('/menu')}
+          onClick={() => navigate('/home')}
         >
           Menu
         </button>

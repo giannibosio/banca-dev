@@ -5,7 +5,7 @@ import PrelievoPage from './components/PrelievoPage';
 import MovimentiPage from './components/MovimentiPage';
 import EstrattoContoPage from './components/EstrattoContoPage';
 import EsciPage from './components/EsciPage';
-import ProtectedRoute from './components/ProtectedRoute';
+import ProtectedRoute from './components/ProtectedRoute'; //per evita l'accesso alle pagine se non loggato
 import type User from './types/Users';
 import { Routes, Route, useLocation } from 'react-router'; //aggiunto location per non mostrare nav in home (menù)
 
@@ -27,52 +27,27 @@ function App() {
         {showNavbar && <Navbar isLoggedIn={Boolean(currentUser)} />}
         <div className="card">
           <img src={logoBancaDev} className="logo-bancadev" alt="React" />
-
           <Routes>
             <Route
               index
               element={<InsertPinPage setCurrentUser={setCurrentUser} />}
             />
-            <Route
-              path="home"
-              element={
-                <ProtectedRoute currentUser={currentUser}>
-                  <MenuPage currentUser={currentUser} />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="prelievo"
-              element={
-                <ProtectedRoute currentUser={currentUser}>
-                  <PrelievoPage />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="movimenti"
-              element={
-                <ProtectedRoute currentUser={currentUser}>
-                  <MovimentiPage />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="estratto-conto"
-              element={
-                <ProtectedRoute currentUser={currentUser}>
-                  <EstrattoContoPage currentUser={currentUser} />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="esci"
-              element={
-                <ProtectedRoute currentUser={currentUser}>
-                  <EsciPage setCurrentUser={setCurrentUser} />
-                </ProtectedRoute>
-              }
-            />
+            <Route element={<ProtectedRoute currentUser={currentUser} />}>
+              <Route
+                path="home"
+                element={<MenuPage currentUser={currentUser} />}
+              />
+              <Route path="prelievo" element={<PrelievoPage />} />
+              <Route path="movimenti" element={<MovimentiPage />} />
+              <Route
+                path="estratto-conto"
+                element={<EstrattoContoPage currentUser={currentUser} />}
+              />
+              <Route
+                path="esci"
+                element={<EsciPage setCurrentUser={setCurrentUser} />}
+              />
+            </Route>
           </Routes>
         </div>
 

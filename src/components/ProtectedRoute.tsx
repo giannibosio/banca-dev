@@ -1,18 +1,15 @@
-import { Navigate } from 'react-router';
-import type { ReactNode } from 'react';
+import { Navigate, Outlet } from 'react-router';
 import type User from '../types/Users';
 
 interface ProtectedRouteProps {
-  children: ReactNode;
   currentUser: User | null;
 }
 
-const ProtectedRoute = ({ children, currentUser }: ProtectedRouteProps) => {
+const ProtectedRoute = ({ currentUser }: ProtectedRouteProps) => {
   if (!currentUser) {
     return <Navigate to="/" replace />;
   }
-
-  return <>{children}</>;
+  return <Outlet />;
 };
 
 export default ProtectedRoute;

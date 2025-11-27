@@ -43,6 +43,18 @@
           "descrizione": "Acquisto Amazon",
           "importo": -79.9,
           "categoria": "Shopping"
+        },
+        {
+          "data": "2025-10-23",
+          "descrizione": "Ricarica telefonica",
+          "importo": -10.0,
+          "categoria": "Telefonia"
+        },
+        {
+          "data": "2025-09-12",
+          "descrizione": "Bonifico a: Studio Medico",
+          "importo": -65.0,
+          "categoria": "Sanità"
         }
       ]
     }

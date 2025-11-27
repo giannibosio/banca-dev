@@ -1,0 +1,69 @@
+/* Griglia movimenti */
+.movimenti-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1.5fr 1.5fr;
+  gap: 0;
+  width: 100%;
+}
+
+.movimenti-header {
+  display: contents;
+  font-weight: bold;
+  border-bottom: 2px solid #dee2e6;
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.movimenti-header .grid-cell {
+  padding: 0.75rem;
+  background-color: #f8f9fa;
+  font-weight: 600;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.movimenti-row {
+  display: contents;
+}
+
+.movimenti-row:hover .grid-cell {
+  background-color: #f1f3f5;
+}
+
+.grid-cell {
+  padding: 0.75rem;
+  border-bottom: 1px solid #dee2e6;
+  display: flex;
+  align-items: center;
+}
+
+.movimenti-row:last-child .grid-cell {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .movimenti-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .movimenti-header {
+    display: none;
+  }
+
+  .movimenti-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-bottom: 1px solid #dee2e6;
+    padding: 0.5rem 0;
+  }
+
+  .grid-cell {
+    padding: 0.25rem 0.75rem;
+    border-bottom: none;
+  }
+
+  .grid-cell::before {
+    content: attr(data-label);
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+}

@@ -8,7 +8,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import './index.css';
-import App from './App.tsx';
+import App from './App';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

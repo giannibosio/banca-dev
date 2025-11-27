@@ -16,8 +16,9 @@ import { Navbar } from './components/Navbar';
 
 function App() {
   const { currentUser } = useUser();
-  const location = useLocation();
-  const showNavbar = currentUser !== null && location.pathname !== '/home';
+  const hideNavbarOnPages = ['/'];
+  const showNavbar =
+    currentUser !== null && !hideNavbarOnPages.includes(location.pathname);
 
   return (
     <>

@@ -1,59 +1,48 @@
+import { Navbar as RBNavbar, Nav, Container } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import './Navbar.css';
 
-interface NavbarProps {
+interface Props {
   isLoggedIn: boolean;
 }
 
-export function Navbar({ isLoggedIn }: NavbarProps) {
+export function Navbar({ isLoggedIn }: Props) {
+  if (!isLoggedIn) return null; // ❗ Nascondi navbar se non loggato
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-transparent">
-      <div className="container-fluid">
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+    <RBNavbar
+      bg="transparent"
+      data-bs-theme="transparent"
+      expand="lg"
+      className="navbar navbar-expand-lg navbar-dark bg-transparent mb-0"
+    >
+      <Container>
+        <RBNavbar.Brand as={NavLink} to="/home"></RBNavbar.Brand>
 
-        <div className="collapse navbar-collapse" id="navbarNav">
-          {isLoggedIn && (
-            <ul className="navbar-nav me-auto">
-              <li className="nav-item">
-                <NavLink to="/home" end className="nav-link">
-                  HOME
-                </NavLink>
-              </li>
+        <RBNavbar.Toggle aria-controls="main-navbar" />
+        <RBNavbar.Collapse id="main-navbar">
+          <Nav className="ms-auto">
+            <Nav.Link as={NavLink} to="/home" end>
+              Menu
+            </Nav.Link>
 
-              <li className="nav-item">
-                <NavLink to="/prelievo" className="nav-link">
-                  PRELIEVO
-                </NavLink>
-              </li>
+            <Nav.Link as={NavLink} to="/prelievo">
+              Prelievo
+            </Nav.Link>
 
-              <li className="nav-item">
-                <NavLink to="/movimenti" className="nav-link">
-                  MOVIMENTI
-                </NavLink>
-              </li>
+            <Nav.Link as={NavLink} to="/movimenti">
+              Movimenti
+            </Nav.Link>
 
-              <li className="nav-item">
-                <NavLink to="/estratto-conto" className="nav-link">
-                  SALDO TOTALE
-                </NavLink>
-              </li>
+            <Nav.Link as={NavLink} to="/estratto-conto">
+              Estratto Conto
+            </Nav.Link>
 
-              <li className="nav-item">
-                <NavLink to="/esci" className="nav-link ">
-                  LOGOUT
-                </NavLink>
-              </li>
-            </ul>
-          )}
-        </div>
-      </div>
-    </nav>
+            <Nav.Link as={NavLink} to="/esci">
+              Esci
+            </Nav.Link>
+          </Nav>
+        </RBNavbar.Collapse>
+      </Container>
+    </RBNavbar>
   );
 }

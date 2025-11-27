@@ -6,14 +6,14 @@ interface Props {
 }
 
 export function Navbar({ isLoggedIn }: Props) {
-  if (!isLoggedIn) return null; // ❗ Nascondi navbar se non loggato
+  if (!isLoggedIn) return null; //Nascondi navbar se non loggato
 
   return (
     <RBNavbar
       bg="transparent"
       data-bs-theme="transparent"
       expand="lg"
-      className="navbar navbar-expand-lg navbar-dark bg-transparent mb-0"
+      className="navbar navbar-expand-lg navbar-dark bg-transparent mb-1"
     >
       <Container>
         <RBNavbar.Brand as={NavLink} to="/home"></RBNavbar.Brand>

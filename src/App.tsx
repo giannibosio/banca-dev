@@ -6,7 +6,7 @@ import MovimentiPage from './components/MovimentiPage';
 import EstrattoContoPage from './components/EstrattoContoPage';
 import EsciPage from './components/EsciPage';
 import ProtectedRoute from './components/ProtectedRoute';
-import { Routes, Route, useLocation } from 'react-router';
+import { Routes, Route } from 'react-router';
 
 import reactLogo from './assets/react.svg';
 import logoBancaDev from './assets/logo-bancadev.svg';
@@ -16,7 +16,7 @@ import { Navbar } from './components/Navbar';
 
 function App() {
   const { currentUser } = useUser();
-  const hideNavbarOnPages = ['/'];
+  const hideNavbarOnPages = ['/home'];
   const showNavbar =
     currentUser !== null && !hideNavbarOnPages.includes(location.pathname);
 
